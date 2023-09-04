@@ -12,7 +12,7 @@ body {
   align-items: center;
   height: 100vh;
   font-family: open sans;
-  color: #10214e;
+  color: #eda60e;
 }
 
 article {
@@ -25,9 +25,9 @@ article {
   max-width: 25em;
   min-width: 20em;
   border-radius: 1rem;
-  background: rgb(0,239,255);
-  background: linear-gradient(0deg, rgba(0,239,255,1) 40%, #4e54c8 100%);
-  box-shadow: 0 0 20px 20px rgba(0,0,0,.1);
+  background: rgb(229, 229, 229);
+  background: linear-gradient(0deg, rgb(0, 0, 0) 40%, #22232c 100%);
+  box-shadow: 0 0 20px 20px rgba(12, 30, 221, 0.1);
   transition: .25s;
 }
 
@@ -41,7 +41,7 @@ header {
 
 h1 {
   margin: 2rem 0 1rem;
-  color: rgba(0,239,255,1);
+  color: rgb(252, 163, 17);
 }
 
 button {
@@ -141,7 +141,7 @@ article > p {
   padding: 3rem 2rem;
   border-radius: 0 0 1rem 1rem;
   text-align: center;
-  background: rgba(255,255,255, 0.5);
+  background: rgba(229, 229, 229);
 }
 
 /* expand content */
