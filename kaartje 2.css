@@ -1,0 +1,120 @@
+$padding: 30px;
+
+* { box-sizing: border-box; }
+
+body { background: rgb(91, 133, 170); overflow-x: hidden; }
+.container {
+  perspective: 800px;
+  /* Styling */
+  color: rgb(23, 17, 35);
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  /* Center it */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.card {
+  /* Styling */
+  width: 700px;
+  height: 400px;
+  background: rgb(23, 17, 35);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  /* Card flipping effects */
+  transform-style: preserve-3d;
+  transition: 1s;
+}
+.side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  /* Fix Chrome rendering bug */
+  transform: rotate(0deg) translateZ(1px);
+}
+
+/* Flip the card on hover */
+.container:hover .card,
+.back {
+  transform: rotateY(-180deg) translateZ(1px);
+}
+
+/* Front styling */
+.front {
+  /* Center the name + outline (almost) */
+  line-height: 390px; /* Height - some (because visual center is a little higher than actual center) */
+  text-align: center;
+}
+.logo {
+  outline: 7px solid rgb(244, 96, 54);
+  display: inline-block;
+  padding: 40px 80px;
+  color: rgb(244, 96, 54);
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4em;
+  font-weight: normal;
+  line-height: 32px;
+  letter-spacing: 4px;
+}
+
+/* Back styling */
+.back {
+  background: rgb(244, 96, 54);
+  padding: $padding;
+  text-align: center;
+}
+.name {
+  color: rgb(55, 34, 72);
+  margin-bottom: 0;
+}
+p {
+  margin: 1.2em 0;
+}
+.info {
+  position: relative;
+  bottom: $padding;
+  left: $padding;
+  color: rgb(55, 34, 72);
+  text-align: center;
+<div class="info">
+  <p><span class="property">Email: </span>robby.risse@gmail.com</p>
+  <!-- Font Awesome icons -->
+  <p><span class="property">Twitter: </span><a href="https://twitter.com/Niftaveli" target="_blank"><i class="fab fa-twitter"></i> @Niftaveli</a></p>
+  <p><span class="property">LinkedIn: </span><a href="https://www.linkedin.com/in/robbyrisse" target="_blank"><i class="fab fa-linkedin"></i> Your LinkedIn</a></p>
+  <p><span class="property">GitHub: </span><a href="https://github.com/robbyrisse" target="_blank"><i class="fab fa-github"></i> Your GitHub</a></p>
+</div>
+}
+.property {
+  color: rgb(23, 17, 35);
+}
+
+/* Social media icons styling */
+.social-icons {
+  margin-top: 250px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.social-icons a img {
+  width: 40px; /* Adjust the size as needed */
+  height: 40px; /* Adjust the size as needed */
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.social-icons a img:hover {
+  transform: scale(1.2);
+}
+
+/* Make semi-responsive */
+@media (max-width: 700px) {
+  .card {
+    transform: scale(.5);
+  }
+  .container:hover .card {
+    transform: scale(.5) rotateY(-180deg) translateZ(1px);
+  }
+}
