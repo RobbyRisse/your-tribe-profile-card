@@ -5,45 +5,45 @@
     monospace;
 }
 
-$blue: #29b6f6;
-$green: #9ccc65;
-$purple: #ba68c8;
-$orange: #f57c00;
-$red: #ef5350;
-$cyan: #4dd0e1;
-$background-light: #ffa726;
-$background-dark: #ff9800;
+--blue: #29b6f6
+--green: #9ccc65
+--purple: #ba68c8
+--orange: #f57c00
+--red: #ef5350
+--cyan: #4dd0e1
+--background-light: #ffa726
+--background-dark: #ff9800
 
 body {
   background-image: linear-gradient(
     to bottom right,
-    $background-dark,
-    $background-light
+    var(--background-dark),
+    var(--background-light),
   );
 }
 
-@mixin text-color($color) {
-  color: $color;
+@mixin text-color(--color) {
+  color: --color;
 }
 
 .blue {
-  @include text-color($blue);
+  @include text-color(--blue);
 }
 
 .green {
-  @include text-color($green);
+  @include text-color(--green);
 }
 
 .purple {
-  @include text-color($purple);
+  @include text-color(--purple);
 }
 
 .cyan {
-  @include text-color($cyan);
+  @include text-color(--cyan);
 }
 
 .red {
-  @include text-color($red);
+  @include text-color(--red);
 }
 
 .content {
@@ -63,7 +63,7 @@ body {
 
   position: relative;
 
-  &__side {
+  .card__side {
     height: 15rem;
     transition: all 0.8s ease;
 
@@ -98,7 +98,7 @@ body {
   }
 
   //FRONT SIDE STYLING
-  &__cont {
+  .card__cont {
     height: 15rem;
     background-color: #1c1c1c;
 
@@ -107,7 +107,7 @@ body {
     justify-content: center;
   }
 
-  &__cta {
+  .card__cta {
     position: absolute;
     top: 50%;
     left: 50%;
