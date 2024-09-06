@@ -19,7 +19,7 @@
 
 /* Apply background gradient */
 body {
-  background-image:url(matrix.jpg);
+  background-image:url(../assets/matrix.jpg);
   }
 
 /* Color classes */
