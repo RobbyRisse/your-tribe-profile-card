@@ -1,3 +1,4 @@
+/* Base font settings */
 * {
   font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console",
     "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
@@ -5,122 +6,120 @@
     monospace;
 }
 
---blue: #29b6f6
---green: #9ccc65
---purple: #ba68c8
---orange: #f57c00
---red: #ef5350
---cyan: #4dd0e1
---background-light: #ffa726
---background-dark: #ff9800
+/* Define color variables using CSS custom properties */
+:root {
+  --blue: #29b6f6;
+  --green: #9ccc65;
+  --purple: #ba68c8;
+  --red: #ef5350;
+  --cyan: #4dd0e1;
+  --background-light: #ffa726;
+  --background-dark: #ff9800;
+}
 
+/* Apply background gradient */
 body {
-  background-image: linear-gradient(
-    to bottom right,
-    var(--background-dark),
-    var(--background-light),
-  );
-}
+  background-image:url(matrix.jpg);
+  }
 
-@mixin text-color(--color) {
-  color: --color;
-}
-
+/* Color classes */
 .blue {
-  @include text-color(--blue);
+  color: var(--blue);
 }
 
 .green {
-  @include text-color(--green);
+  color: var(--green);
 }
 
 .purple {
-  @include text-color(--purple);
+  color: var(--purple);
 }
 
 .cyan {
-  @include text-color(--cyan);
+  color: var(--cyan);
 }
 
 .red {
-  @include text-color(--red);
+  color: var(--red);
 }
 
+/* Content container styling */
 .content {
   height: 100vh;
-  @include text-color(white);
-
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Card component styling */
 .card {
-  //FUNCTIONALITY
-  perspective: 150rem;
+  perspective: 50rem;
   height: 20rem;
   width: 30rem;
-
   position: relative;
+}
 
-  .card__side {
-    height: 15rem;
-    transition: all 0.8s ease;
+.card__side {
+  height: 15rem;
+  transition: all 0.8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: auto;
+  width: 30rem;
+  backface-visibility: hidden;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+}
 
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: auto;
-    width: 30rem;
+.card__side--front {
+  background-color: #1c1c1c;
+}
 
-    backface-visibility: hidden;
-    border-radius: 3px;
-    overflow: hidden;
-    box-shadow: 0 1.5rem 4rem rgba(black, 0.4);
+.card__side--back {
+  transform: rotateY(180deg);
+  background-color: #3d3c3c;
+}
 
-    &--front {
-      background-color: #1c1c1c;
-    }
+.card:hover .card__side--front {
+  transform: rotateY(-180deg);
+}
 
-    &--back {
-      transform: rotateY(180deg);
+.card:hover .card__side--back {
+  transform: rotateY(0deg);
+}
 
-      background-color: #1c1c1c;
-    }
-  }
+.card__cont {
+  height: 15rem;
+  background-color: #3d3c3c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  &:hover &__side--front {
-    transform: rotateY(-180deg);
-  }
+.card__cta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  color: white;
+}
 
-  &:hover &__side--back {
-    transform: rotateY(0deg);
-  }
+.card__cta p {
+  margin-left: 1rem;
+}
 
-  //FRONT SIDE STYLING
-  .card__cont {
-    height: 15rem;
-    background-color: #1c1c1c;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .card__cta {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    @include text-color(white);
-
-    p {
-      margin-left: 1rem;
-
-      & > .space {
-        margin-left: 2rem;
-      }
-    }
-  }
+.card__cta p > .space {
+  margin-left: 2rem;
+}
+.social-icons{
+  display: flex;
+  align-items: center;
+  margin-left: 135px;
+}
+.Github{
+  size: 10px;
 }
