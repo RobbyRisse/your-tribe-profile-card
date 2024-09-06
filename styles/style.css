@@ -115,11 +115,5 @@ body {
 .card__cta p > .space {
   margin-left: 2rem;
 }
-.social-icons{
-  display: flex;
-  align-items: center;
-  margin-left: 135px;
-}
-.Github{
-  size: 10px;
-}
+.social-icons img{
+  width: 2rem;}
